@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Test Sidebar</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    
+    <script src="js/apiConfig.js"></script>
+    <script src="js/dishSource.js"></script>
+    <script src="js/model/DinnerModel.js"></script>
+    <script src="reactjs/useModelProp.js"></script>
+    <script src="reactjs/usePromise.js"></script>
+
+    <script src="js/view/sidebarView.js" type="text/jsx"></script>
+    <script src="js/view/promiseNoData.js" type="text/jsx"></script>
+
+    <script src="eactjs/sidebarPresenter.js" type="text/jsx"></script>
+
+   
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  </head>
+  <body>
+    <div id="test">
+      testing..       
+    </div>
+
+    <script type="text/jsx">
+      const myModel = new DinnerModel(3);
+        Promise.all([
+          DishSource.getDishDetails(523145),
+          DishSource.getDishDetails(787321),
+          DishSource.getDishDetails(452179),
+        ]).then(values => {values.map(d => myModel.addToMenu(d))}).catch(console.error);
+        ReactDOM.render(<SidebarPresenter model={myModel} />, document.getElementById('test'));
+    </script>
+  </body>
+</html>

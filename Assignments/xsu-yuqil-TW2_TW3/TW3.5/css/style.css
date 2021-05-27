@@ -1,0 +1,104 @@
+.hidden{
+    display: none;
+}
+/*---------------TW2.4---------------*/
+.debug {
+    border-style : solid;
+  }
+  
+.flexParent {
+    display: flex;
+    height: 100%;
+    flex-direction:row;
+}
+
+.sidebar {
+    max-width: 450px;
+  }
+  
+.mainContent {
+    overflow: scroll;
+    flex: 1;
+}
+
+.search{
+    overflow: scroll;
+    flex: 1;
+}
+
+@media screen and (max-width: 450px) {
+    .flexParent {
+      display: flex;
+      width: 100%;
+      flex-direction:column;
+    }
+  
+  }
+
+/*--------------Search------------*/
+.search-container, .searchResult-container{
+    float: left;
+}
+
+
+.search-container input{
+    width:200px; 
+}
+
+.searchResult{
+    float: left;
+    display: inline;
+    text-align: center;
+    width: 200px;
+}
+
+.search-image{
+    vertical-align: top;
+    height: 100px;
+}
+
+/*--------------Sidebar-------------*/
+.sidebar-container{
+    float: left;
+    border: 2px solid black;
+    width: auto; 
+}
+
+/*--------------Details-------------*/
+.detail-bar{
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-bar img{
+    float: left;
+    width: 40%;
+    margin-right: 10px;
+}
+
+.detail-price{
+    float:right;
+    width: 55%; 
+}
+
+.detail-price, .detail-ingredient, .detail-instruction{
+    border:1px solid black;
+    margin-top: 8px;
+    padding: 5px;
+}
+
+.detail-instruction{
+    white-space: pre-wrap;
+}
+
+/*---------Test----------*/
+
+.left{
+    float: left;
+    width: 50%;
+}
+
+.right{
+    margin-left: 50%;
+    width: 50%;
+}

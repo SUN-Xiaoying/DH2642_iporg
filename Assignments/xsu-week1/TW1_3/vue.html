@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+        // Babel generates calls to React.createElement by default, so we redefine that:
+        const React={createElement:Vue.h};
+
+        </script>
+        <script src="js/view/summaryView.js" type="text/jsx"></script>
+        <script src="js/view/sidebarView.js" type="text/jsx"></script>
+        <script src="js/view/searchView.js" type="text/jsx"></script>
+        <script src="js/model/DinnerModel.js" type="text/jsx"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+
+    <script type="text/jsx">
+          Vue.render(
+            <div>
+                <SidebarView 
+                    guests = {3}
+                    setGuests = { n => console.log("The user wants a dinner for ", n, "people")}
+                />
+                <SummaryView persons={3}/>
+                <SearchFormView options={["starter", "main course", "dessert"]}
+                    onSearch = { () => console.log("User wants to search!")}
+                    onText = { txt => console.log("User typed: ", txt)}
+                    onDishType = { dishType => console.log("User chose dish type: ", dishType)}
+                />
+            </div>,
+            document.getElementById("app")
+        );
+    </script>
+</html>

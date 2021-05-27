@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Test Search</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <script src="js/apiConfig.js"></script>
+    <script src="js/dishSource.js"></script>
+    <script src="js/model/DinnerModel.js"></script>
+    <script src="reactjs/useModelProp.js"></script>
+    <script src="reactjs/usePromise.js"></script>
+
+    <script src="js/view/promiseNoData.js" type="text/jsx"></script>
+    <script src="js/view/searchView.js" type="text/jsx"></script>
+
+    <script src="reactjs/searchPresenter.js" type="text/jsx"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  </head>
+  <body>
+    <div id="app">
+      testing..
+    </div>
+
+    <script type="text/jsx">
+      const myModel = new DinnerModel(3);
+      DishSource.getDishDetails(523145).then(values => myModel.addToMenu(values));   // add the dishes to the model
+      
+      ReactDOM.render(<SearchPresenter model={myModel} />,document.getElementById("app"));
+
+    </script>
+  </body>
+</html>

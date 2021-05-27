@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "javascript.format.semicolons": "insert",
+	"editor.detectIndentation": false,
+    "prettier.tabWidth": 4,
+    "git.allowForcePush": true,
+}

@@ -1,0 +1,17 @@
+.sidebar-container{
+    float: left;
+    border: 2px solid black;
+    width: 30%; 
+    height:100px;
+    position: absolute;
+}
+
+.summary-container, .search-container{
+    margin-left: 35%;
+    width: 100%; 
+}
+
+.search-bar{
+    width:150px; 
+    border:1px solid rgb(202, 202, 202);
+}
